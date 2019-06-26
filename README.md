@@ -1,5 +1,8 @@
 WebsterSearch
 =============
+
+**Edit fcpg: Updated the VimL code**
+
 A Perl script to search Noah Webster's classic 1913 dictionary and print
 any matching entries to standard output.
 
@@ -23,20 +26,20 @@ Vim installation
 If you use vim-plug:
 
 ```vim
-Plug 'dnmfarrell/WebsterSearch'
+Plug 'fcpg/WebsterSearch'
 ```
 
 Or install the plugin as a package (requires vim 8):
 
     $ mkdir -p ~/.vim/pack/webster-search/start
     $ cd ~/.vim/pack/webster-search/start
-    $ git clone git@github.com:dnmfarrell/WebsterSearch webster-search
+    $ git clone https://github.com/fcpg/WebsterSearch
 
 Update .vimrc to map `<leader>d` to call webster-search on the word under the
 cursor, or visually highlighted:
 
-    $ echo "nnoremap <leader>d :WebsterSearch(expand('<cWORD>'))<cr>" >> ~/.vimrc
-    $ echo "vnoremap <leader>d :<c-u>WebsterSearch(@*)<cr>" >> ~/.vimrc
+    nnoremap <leader>d :<C-u>WebsterSearch(expand('<cWORD>'))<cr>
+    xnoremap <leader>d y:<c-u>WebsterSearch(@@)<cr>
 
 
 Copyright (c) 2019 David Farrell
